@@ -10,7 +10,7 @@
  * 9. Super Duper Challenge: Add exponents (negatives too!)
  */
 //user input
-var currentInput = "0";
+var current_Input = "0";
 //the previous input
 var memory = "0";
 var operator = 0;
@@ -19,7 +19,7 @@ var operator = 0;
  * @author Gemma
  */
 function displayCurrentInput() {
-    document.getElementById('screen').value = currentInput;
+    document.getElementById('screen').value = current_Input;
 }
 /**
  * Adds a digit to the current input
@@ -27,11 +27,11 @@ function displayCurrentInput() {
  * @param {number} dig the value added
  */
 function addDigit(dig) {
-    if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
-        currentInput = dig;
+    if ((eval(current_Input) == 0) && (current_Input.indexOf(".") == -1)) {
+        current_Input = dig;
     }
     else {
-        currentInput = currentInput + dig;
+        current_Input = current_Input + dig;
     }
     displayCurrentInput();
 }
@@ -40,14 +40,14 @@ function addDigit(dig) {
  * @author Gemma
  */
 function addDecimal() {
-    if (currentInput.length == 0) {
+    if (current_Input.length == 0) {
         //no leading ".", use "0."
-        currentInput = "0.";
+        current_Input = "0.";
     }
     else {
         // First make sure one doesn't exist
-        if (currentInput.indexOf(".") == -1) {
-            currentInput = currentInput + ".";
+        if (current_Input.indexOf(".") == -1) {
+            current_Input = current_Input + ".";
         }
     }
     displayCurrentInput();
@@ -57,7 +57,7 @@ function addDecimal() {
  * @author Gemma
  */
 function allClear() {
-    currentInput = "0";
+    current_Input = "0";
     operator = 0; //clear operator
     memory = "0"; //clear memory
     displayCurrentInput();
@@ -83,8 +83,8 @@ function storeOperator(op) {
     if (op.indexOf("+/-") > -1) {
         operator = 5;
     };
-    memory = currentInput; //store value
-    currentInput = "0";
+    memory = current_Input; //store value
+    current_Input = "0";
     displayCurrentInput();
 }
 /**
@@ -93,20 +93,20 @@ function storeOperator(op) {
  */
 function calculate() {
     if (operator == 1 && currentInput.length < 18) {
-        currentInput = eval(memory) * eval(currentInput);
+        current_Input = eval(memory) * eval(current_Input);
     };
     if (operator == 2 && currentInput != 0) {
-        currentInput = eval(memory) / eval(currentInput);
+        current_Input = eval(memory) / eval(current_Input);
     };
     if (operator == 3) {
-        currentInput = eval(memory) + eval(currentInput);
+        current_Input = eval(memory) + eval(current_Input);
     };
     if (operator == 4) {
-        currentInput = eval(memory) - eval(currentInput);
+        current_Input = eval(memory) - eval(current_Input);
     };
-    if (operator == 2 && currentInput == 0) {
+    if (operator == 2 && current_Input == 0) {
         alert("divide by zero error");
-        currentInput = "0";
+        current_Input = "0";
         displayCurrentInput();
     }
     operator = 0; //clear operator
@@ -118,7 +118,7 @@ function calculate() {
  * @author Gemma
  */
 function changeSign() {
-    currentInput = (currentInput * -1);
+    current_Input = (current_Input * -1);
     displayCurrentInput();
 }
 /**
@@ -126,7 +126,7 @@ function changeSign() {
  * @author Gemma
  */
 function clearCurrent() {
-    currentInput = "0";
+    current_Input = "0";
     displayCurrentInput();
 }
 /**
@@ -134,7 +134,7 @@ function clearCurrent() {
  * @author Gemma
  */
 function percentage() {
-    currentInput = (currentInput / 100);
+    current_Input = (current_Input / 100);
     displayCurrentInput();
 }
 /**
@@ -143,10 +143,10 @@ function percentage() {
  */
 function factorial() {
     var result = 1;
-    for (i = currentInput; i > 0; i--) {
+    for (i = current_Input; i > 0; i--) {
         result = result * i;
         console.log(result);
-        currentInput = result;
+        current_Input = result;
         displayCurrentInput();
     }
 }
@@ -155,7 +155,7 @@ function factorial() {
  * @author Gemma
  */
 function squareX() {
-    currentInput = (currentInput * currentInput);
+    current_Input = (current_Input * current_Input);
     displayCurrentInput();
 }
 /**
@@ -163,7 +163,7 @@ function squareX() {
  * @author Alyssa
  */
 function squareRoot() {
-    currentInput = Math.sqrt(currentInput)
+    current_Input = Math.sqrt(current_Input)
     displayCurrentInput();
 }
 /**
@@ -171,7 +171,7 @@ function squareRoot() {
  * @author Gemma
  */
 function inverse() {
-    currentInput = (1 / currentInput);
+    current_Input = (1 / current_Input);
     displayCurrentInput();
 }
 //18
