@@ -9,10 +9,15 @@
  * 8. Super Challenge: Add ( and ) buttons that work!
  * 9. Super Duper Challenge: Add exponents (negatives too!)
  */
+//user input
 var currentInput = "0";
+//the previous input
 var memory = "0";
 var operator = 0;
-// Helper function for displaying the current input
+/**
+ *  Helper function for displaying the current input
+ * @author Gemma
+ */
 function displayCurrentInput() {
     document.getElementById('screen').value = currentInput;
 }
