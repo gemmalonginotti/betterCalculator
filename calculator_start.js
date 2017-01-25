@@ -16,10 +16,11 @@ var operator = 0;
 function displayCurrentInput() {
     document.getElementById('screen').value = currentInput;
 }
-
-
-
-// Adds a digit to the current input
+/**
+ * Adds a digit to the current input
+ * @author Gemma
+ * @param {number} dig the value added
+ */
 function addDigit(dig) {
     if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
         currentInput = dig;
@@ -29,7 +30,10 @@ function addDigit(dig) {
     }
     displayCurrentInput();
 }
-// Adds a decimal to the current input
+/**
+ * Adds a decimal to the current input
+ * @author Gemma
+ */
 function addDecimal() {
     if (currentInput.length == 0) {
         //no leading ".", use "0."
@@ -43,14 +47,21 @@ function addDecimal() {
     }
     displayCurrentInput();
 }
-// Clears everything.
+/**
+ * Clears everything.
+ * @author Gemma
+ */
 function allClear() {
     currentInput = "0";
     operator = 0; //clear operator
     memory = "0"; //clear memory
     displayCurrentInput();
 }
-// Stores the last operator pushed for multiply, divide, add, or subtract.
+/**
+ * Stores the last operator pushed for multiply, divide, add, or subtract.
+ * @author Gemma
+ * @param {number} op the operator that is stored
+ */
 function storeOperator(op) {
     if (op.indexOf("*") > -1) {
         operator = 1;
@@ -71,7 +82,10 @@ function storeOperator(op) {
     currentInput = "0";
     displayCurrentInput();
 }
-// Calculate using operator, the memory and what is current
+/**
+ * Calculate using operator, the memory and what is current
+ * @author Gemma
+ */
 function calculate() {
     if (operator == 1 && currentInput.length < 18) {
         currentInput = eval(memory) * eval(currentInput);
@@ -79,46 +93,67 @@ function calculate() {
     if (operator == 2 && currentInput != 0) {
         currentInput = eval(memory) / eval(currentInput);
     };
-    if (operator == 3 ) {
+    if (operator == 3) {
         currentInput = eval(memory) + eval(currentInput);
     };
     if (operator == 4) {
         currentInput = eval(memory) - eval(currentInput);
     };
-     if (operator == 2 && currentInput == 0){
-         alert("divide by zero error");
-         currentInput = "0";
-         displayCurrentInput();
-     }
+    if (operator == 2 && currentInput == 0) {
+        alert("divide by zero error");
+        currentInput = "0";
+        displayCurrentInput();
+    }
     operator = 0; //clear operator
     memory = "0"; //clear memory
     displayCurrentInput();
 }
-// Change the sign of the current input
+/**
+ *  Change the sign of the current input
+ * @author Gemma
+ */
 function changeSign() {
     currentInput = (currentInput * -1);
     displayCurrentInput();
 }
-// Clear the current input back to 0
+/**
+ * Clear the current input back to 0
+ * @author Gemma
+ */
 function clearCurrent() {
     currentInput = "0";
     displayCurrentInput();
 }
-// Change the current input to a percentage
+/**
+ * Change the current input to a percentage
+ * @author Gemma
+ */
 function percentage() {
     currentInput = (currentInput / 100);
     displayCurrentInput();
 }
-// Calculate the factorial of the current input
+/**
+ * Calculate the factorial of the current input
+ * @author Gemma
+ */
 function factorial() {}
-// Calculate the square of the current input
+/**
+ * Calculate the square of the current input
+ * @author Gemma
+ */
 function squareX() {
     currentInput = (currentInput * currentInput);
     displayCurrentInput();
 }
-// Calculate the square root of the current input
+/**
+ * Calculate the square root of the current input
+ * @author Gemma
+ */
 function squareRoot() {}
-// Calculate the inverse of the current input
+/**
+ * Calculate the inverse of the current input
+ * @author Gemma
+ */
 function inverse() {
     currentInput = (1 / currentInput);
     displayCurrentInput();
