@@ -1,51 +1,81 @@
 <!DOCTYPE html>
+<!-- saved from url=(0092)file:///Network/Servers/srhsdata.srcs.loc/srstudents/ae01759/Downloads/calculator_start.html -->
 <html lang="en">
 
 <head>
     <title>Calcuator Starter App</title>
     <script src="calculator_start.js"></script>
-</head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> </head>
 
 <body>
-    <h1>Calculator App</h1>
-    <form>
-       <script>
-
-        </script>
-        <p>
-            <input type="text" id="screen" maxlength="30" style="text-align: right"> </p>
-        <p>
-            <button type="button" onclick="allClear()">AC</button>
-             <button type="button" onclick="clearCurrent('c')">C</button>
-            <button type="button" onclick="changeSign('+/-')">+/-</button>
-            <button type="button" onclick="percentage('%')">%</button>
-            <button type="button" onclick="storeOperator('/')">/</button>
-        </p>
-        <p>
-            <button type="button" onclick="addDigit('7')">7</button>
-            <button type="button" onclick="addDigit('8')">8</button>
-            <button type="button" onclick="addDigit('9')">9</button>
-            <button type="button" onclick="storeOperator('*')">x</button>
-            <button type="button" onclick="inverse('inv')">inverse</button>
-        </p>
-        <p>
-            <button type="button" onclick="addDigit('4')">4</button>
-            <button type="button" onclick="addDigit('5')">5</button>
-            <button type="button" onclick="addDigit('6')">6</button>
-            <button type="button" onclick="storeOperator('-')">-</button>
-        </p>
-        <p>
-            <button type="button" onclick="addDigit('1')">1</button>
-            <button type="button" onclick="addDigit('2')">2</button>
-            <button type="button" onclick="addDigit('3')">3</button>
-            <button type="button" onclick="storeOperator('+')">+</button>
-        </p>
-        <p>
-            <button type="button" onclick="addDigit('0')">0</button>
-            <button type="button" onclick="addDecimal()">.</button>
-            <button type="button" onclick="squareX('x^2')">x^2</button>
-            <button type="button" onclick="calculate()">=</button>
-        </p>
-    </form>  </body>
+    <h1 align="center">Calculator App</h1>
+    <form align="center">
+            <p>
+                <div class="container" align="center">
+                    <input type="text" class="text-right" id="screen"> </div>
+            </p>
+            <p>
+                <div class="container">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="">Rad</label>
+                    <label class="checkbox-inline label-space">
+                        <input type="checkbox" value="">Deg</label>
+                    <button type="button" class="btn btn-success" onclick="addDigit(&#39;π&#39;)">π</button>
+                    <button type="button" class="btn btn-success" onclick="factorial()">x!</button>
+                    <button type="button" class="btn btn-success" onclick="square()">x<sup>2</sup></button>
+                </div>
+            </p>
+            <p>
+                <div class="container">
+                    <button type="button" class="btn btn-success" onclick="sin()">sin</button>
+                    <button type="button" class="btn btn-success" onclick="cos()">cos</button>
+                    <button type="button" class="btn btn-success" onclick="tan()">tan</button>
+                    <button type="button" class="btn btn-success" onclick="squareRoot()">√x</button>
+                    <button type="button" class="btn btn-success" onclick="percentage(&#39;%&#39;)">%</button>
+                </div>
+            </p>
+            <p>
+                <div class="container">
+                    <button type="button" class="btn btn-success" onclick="inverse()"><sup>1</sup>/<sub>x</sub></button>
+                    <button type="button" class="btn btn-info" onclick="addDigit(&#39;7&#39;)">7</button>
+                    <button type="button" class="btn btn-info" onclick="addDigit(&#39;8&#39;)">8</button>
+                    <button type="button" class="btn btn-info" onclick="addDigit(&#39;9&#39;)">9</button>
+                    <button type="button" class="btn btn-warning" onclick="storeOperator(&#39;/&#39;)">/</button>
+                    <button type="button" class="btn btn-primary" onclick="">mr</button>
+                </div>
+            </p>
+            <p>
+                <div class="container">
+                    <button type="button" class="btn btn-success" onclick=" changeSign(&#39;+/-&#39;)"><sup>+</sup>/-</button>
+                    <button type="button" class="btn btn-info" onclick="addDigit(&#39;4&#39;)">4</button>
+                    <button type="button" class="btn btn-info" onclick="addDigit(&#39;5&#39;)">5</button>
+                    <button type="button" class="btn btn-info" onclick="addDigit(&#39;6&#39;)">6</button>
+                    <button type="button" class="btn btn-warning" onclick="storeOperator(&#39;*&#39;)">x</button>
+                    <button type="button" class="btn btn-primary" onclick="">mc</button>
+                </div>
+            </p>
+            <p>
+                <div class="container" class="row">
+                    <button type="button" class="btn btn-danger" onclick="clear()">C</button>
+                    <button type="button" class="btn btn-info" onclick="addDigit(&#39;1&#39;)">1</button>
+                    <button type="button" class="btn btn-info" onclick="addDigit(&#39;2&#39;)">2</button>
+                    <button type="button" class="btn btn-info" onclick="addDigit(&#39;3&#39;)">3</button>
+                    <button type="button" class="btn btn-warning" onclick="storeOperator(&#39;-&#39;)">-</button>
+                    <button type="button" class="btn btn-primary" onclick="">m-</button>
+                </div>
+            </p>
+            <p>
+                <div class="container">
+                    <button type="button" class="btn btn-danger" onclick="allClear()"> <font size="1">AC</font></button>
+                    <button type="button" class="btn btn-info" onclick="addDigit(&#39;0&#39;)">0</button>
+                    <button type="button" class="btn btn-default btn-outline-default" onclick="addDecimal(&#39;.&#39;)">.</button>
+                    <button type="button" class="btn btn-danger" onclick="calculate()">=</button>
+                    <button type="button" class="btn btn-warning" onclick="storeOperator(&#39;+&#39;)">+</button>
+                    <button type="button" class="btn btn-primary" onclick="">m+</button>
+                </div>
+            </p>
+    </form>
+</body>
 
 </html>
