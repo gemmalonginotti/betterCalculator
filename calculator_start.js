@@ -134,9 +134,17 @@ function percentage() {
 }
 /**
  * Calculate the factorial of the current input
- * @author Gemma
+ * @author Alyssa
  */
-function factorial() {}
+function factorial() {
+    var result = 1;
+    for (i = currentInput; i > 0; i--) {
+        result = result * i;
+        console.log(result);
+        currentInput = result;
+        displayCurrentInput();
+    }
+}
 /**
  * Calculate the square of the current input
  * @author Gemma
@@ -147,9 +155,12 @@ function squareX() {
 }
 /**
  * Calculate the square root of the current input
- * @author Gemma
+ * @author Alyssa
  */
-function squareRoot() {}
+function squareRoot() {
+    currentInput = Math.sqrt(currentInput)
+    displayCurrentInput();
+}
 /**
  * Calculate the inverse of the current input
  * @author Gemma
