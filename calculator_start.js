@@ -112,7 +112,7 @@ function calculate()
     {
         current_Input = eval(memory) * eval(current_Input);
     };
-    if (operator == 2 && currentInput != 0)
+    if (operator == 2 && current_Input != 0)
     {
         current_Input = eval(memory) / eval(current_Input);
     };
