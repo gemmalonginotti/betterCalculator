@@ -27,3 +27,9 @@ QUnit.test("Percentage test", function( assert ){
     percentage();
     assert.equal(document.getElementById("screen").value, "0.0042", "Passed - Expected 0.0042");
 });
+QUnit.test("Inverse test", function( assert ){
+    clearCurrent();
+    addDigit('5');
+    inverse();
+    assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
+});
