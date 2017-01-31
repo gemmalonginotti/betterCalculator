@@ -32,24 +32,28 @@ QUnit.test("Check percentage test", function (assert) {
     percentage();
     assert.equal(document.getElementById("screen").value, "0.0042", "Passed - Expected 0.0042");
 });
+// Test for inverse function
 QUnit.test("Check inverse test", function (assert) {
     clearCurrent();
     addDigit('5');
     inverse();
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
 });
+// Test for Square Root function
 QUnit.test("Check Square Root test", function (assert) {
     clearCurrent();
     addDigit('16');
     squareRoot();
     assert.equal(document.getElementById("screen").value, "4", "Passed - Expected 4");
-});
+});\
+// Test for Square function
 QUnit.test("Check Square test", function (assert) {
     clearCurrent();
     addDigit('4');
     squareX();
     assert.equal(document.getElementById("screen").value, "16", "Passed - Expected 16");
 });
+// Test for allClear function
 QUnit.test("Check allClear test", function (assert) {
     clearCurrent();
     addDigit('4');
