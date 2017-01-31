@@ -7,8 +7,15 @@ QUnit.test( "Add digits test", function( assert ) {
 
 // Test adding one, then two decimals
 QUnit.test( "Add decimal test", function( assert ) {
+    clearCurrent();
     addDecimal();
     addDigit('2');
     addDecimal();
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
+});
+QUnit.test("Change sign test", function( assert ){
+    clearCurrent();
+    addDigit('3');
+    changeSign();
+    assert.equal(document.getElementById("screen").value, "-3", "Passed - Expected -3");
 });
