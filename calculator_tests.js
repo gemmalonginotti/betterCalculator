@@ -44,3 +44,9 @@ QUnit.test("Check Square Root test", function (assert) {
     squareRoot();
     assert.equal(document.getElementById("screen").value, "4", "Passed - Expected 4");
 });
+QUnit.test("Square test", function (assert) {
+    clearCurrent();
+    addDigit('4');
+    squareX();
+    assert.equal(document.getElementById("screen").value, "16", "Passed - Expected 16");
+});
