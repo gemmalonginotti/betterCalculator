@@ -18,7 +18,8 @@ var operator = 0;
  *  Helper function for displaying the current input
  * @author Gemma
  */
-function displayCurrentInput() {
+function displayCurrentInput()
+{
     document.getElementById('screen').value = current_Input;
 }
 /**
@@ -26,11 +27,14 @@ function displayCurrentInput() {
  * @author Gemma
  * @param {number} dig the value added
  */
-function addDigit(dig) {
-    if ((eval(current_Input) == 0) && (current_Input.indexOf(".") == -1)) {
+function addDigit(dig)
+{
+    if ((eval(current_Input) == 0) && (current_Input.indexOf(".") == -1))
+    {
         current_Input = dig;
     }
-    else {
+    else
+    {
         current_Input = current_Input + dig;
     }
     displayCurrentInput();
@@ -39,14 +43,18 @@ function addDigit(dig) {
  * Adds a decimal to the current input
  * @author Gemma
  */
-function addDecimal() {
-    if (current_Input.length == 0) {
+function addDecimal()
+{
+    if (current_Input.length == 0)
+    {
         //no leading ".", use "0."
         current_Input = "0.";
     }
-    else {
+    else
+    {
         // First make sure one doesn't exist
-        if (current_Input.indexOf(".") == -1) {
+        if (current_Input.indexOf(".") == -1)
+        {
             current_Input = current_Input + ".";
         }
     }
@@ -56,7 +64,8 @@ function addDecimal() {
  * Clears everything.
  * @author Gemma
  */
-function allClear() {
+function allClear()
+{
     current_Input = "0";
     operator = 0; //clear operator
     memory = "0"; //clear memory
@@ -67,20 +76,26 @@ function allClear() {
  * @author Gemma
  * @param {number} op the operator that is stored
  */
-function storeOperator(op) {
-    if (op.indexOf("*") > -1) {
+function storeOperator(op)
+{
+    if (op.indexOf("*") > -1)
+    {
         operator = 1;
     }; //codes for *
-    if (op.indexOf("/") > -1) {
+    if (op.indexOf("/") > -1)
+    {
         operator = 2;
     }; // slash (divide)
-    if (op.indexOf("+") > -1) {
+    if (op.indexOf("+") > -1)
+    {
         operator = 3;
     }; // sum
-    if (op.indexOf("-") > -1) {
+    if (op.indexOf("-") > -1)
+    {
         operator = 4;
     }; // difference
-    if (op.indexOf("+/-") > -1) {
+    if (op.indexOf("+/-") > -1)
+    {
         operator = 5;
     };
     memory = current_Input; //store value
@@ -91,20 +106,26 @@ function storeOperator(op) {
  * Calculate using operator, the memory and what is current
  * @author Gemma
  */
-function calculate() {
-    if (operator == 1 && currentInput.length < 18) {
+function calculate()
+{
+    if (operator == 1 && currentInput.length < 18)
+    {
         current_Input = eval(memory) * eval(current_Input);
     };
-    if (operator == 2 && currentInput != 0) {
+    if (operator == 2 && current_Input != 0)
+    {
         current_Input = eval(memory) / eval(current_Input);
     };
-    if (operator == 3) {
+    if (operator == 3)
+    {
         current_Input = eval(memory) + eval(current_Input);
     };
-    if (operator == 4) {
+    if (operator == 4)
+    {
         current_Input = eval(memory) - eval(current_Input);
     };
-    if (operator == 2 && current_Input == 0) {
+    if (operator == 2 && current_Input == 0)
+    {
         alert("divide by zero error");
         current_Input = "0";
         displayCurrentInput();
@@ -117,7 +138,8 @@ function calculate() {
  *  Change the sign of the current input
  * @author Gemma
  */
-function changeSign() {
+function changeSign()
+{
     current_Input = (current_Input * -1);
     displayCurrentInput();
 }
@@ -125,7 +147,8 @@ function changeSign() {
  * Clear the current input back to 0
  * @author Gemma
  */
-function clearCurrent() {
+function clearCurrent()
+{
     current_Input = "0";
     displayCurrentInput();
 }
@@ -133,7 +156,8 @@ function clearCurrent() {
  * Change the current input to a percentage
  * @author Gemma
  */
-function percentage() {
+function percentage()
+{
     current_Input = (current_Input / 100);
     displayCurrentInput();
 }
@@ -141,9 +165,11 @@ function percentage() {
  * Calculate the factorial of the current input
  * @author Alyssa
  */
-function factorial() {
+function factorial()
+{
     var result = 1;
-    for (i = current_Input; i > 0; i--) {
+    for (i = current_Input; i > 0; i--)
+    {
         result = result * i;
         console.log(result);
         current_Input = result;
@@ -154,7 +180,8 @@ function factorial() {
  * Calculate the square of the current input
  * @author Gemma
  */
-function squareX() {
+function squareX()
+{
     current_Input = (current_Input * current_Input);
     displayCurrentInput();
 }
@@ -162,7 +189,8 @@ function squareX() {
  * Calculate the square root of the current input
  * @author Alyssa
  */
-function squareRoot() {
+function squareRoot()
+{
     current_Input = Math.sqrt(current_Input)
     displayCurrentInput();
 }
@@ -170,7 +198,8 @@ function squareRoot() {
  * Calculate the inverse of the current input
  * @author Gemma
  */
-function inverse() {
+function inverse()
+{
     current_Input = (1 / current_Input);
     displayCurrentInput();
 }
