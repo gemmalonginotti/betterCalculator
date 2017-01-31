@@ -1,5 +1,6 @@
 // Test for inputing digits
 QUnit.test("Add digits test", function (assert) {
+    clearCurrent();
     addDigit('1');
     addDigit('2');
     assert.equal(document.getElementById("screen").value, "12", "Passed - Expected 12");
@@ -36,4 +37,10 @@ QUnit.test("Inverse test", function (assert) {
     addDigit('5');
     inverse();
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
+});
+QUnit.test("Check Square Root test", function (assert) {
+    clearCurrent();
+    addDigit('16');
+    squareRoot();
+    assert.equal(document.getElementById("screen").value, "4", "Passed - Expected 4");
 });
