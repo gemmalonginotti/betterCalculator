@@ -1,5 +1,6 @@
 // Test for inputing digits
 QUnit.test( "Add digits test", function( assert ) {
+    clearCurrent();
     addDigit('1');
     addDigit('2');
     assert.equal(document.getElementById("screen").value, "12", "Passed - Expected 12");
@@ -18,4 +19,11 @@ QUnit.test("Change sign test", function( assert ){
     addDigit('3');
     changeSign();
     assert.equal(document.getElementById("screen").value, "-3", "Passed - Expected -3");
+});
+QUnit.test("Percentage test", function( assert ){
+    clearCurrent();
+    addDigit('42');
+    percentage();
+    percentage();
+    assert.equal(document.getElementById("screen").value, "0.0042", "Passed - Expected 0.0042");
 });
