@@ -13,18 +13,21 @@ QUnit.test("Add decimal test", function (assert) {
     addDecimal();
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
 });
+// Test changing the sign of the current input
 QUnit.test("Change sign test", function (assert) {
     clearCurrent();
     addDigit('3');
     changeSign();
     assert.equal(document.getElementById("screen").value, "-3", "Passed - Expected -3");
 });
+// Test the factorial factorial
 QUnit.test("Check factorial test", function (assert) {
     clearCurrent();
     factorial();
     addDigit('3');
     assert.equal(document.getElementById("screen").value, "3", "Passed - Expected 6");
 });
+// Check finding the percentage of the current input
 QUnit.test("Check percentage test", function (assert) {
     clearCurrent();
     addDigit('42');
