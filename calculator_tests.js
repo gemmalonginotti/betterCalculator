@@ -38,15 +38,10 @@ QUnit.test("Inverse test", function (assert) {
     inverse();
     assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
 });
-QUnit.test("Check Square Root test", function (assert) {
-    clearCurrent();
-    addDigit('16');
-    squareRoot();
-    assert.equal(document.getElementById("screen").value, "4", "Passed - Expected 4");
-});
-QUnit.test("Square test", function (assert) {
+QUnit.test("Square test", function( assert ){
     clearCurrent();
     addDigit('4');
     squareX();
     assert.equal(document.getElementById("screen").value, "16", "Passed - Expected 16");
 });
+
