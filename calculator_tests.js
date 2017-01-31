@@ -24,3 +24,16 @@ QUnit.test("Check factorial test", function (assert) {
     addDigit('3');
     assert.equal(document.getElementById("screen").value, "3", "Passed - Expected 6");
 });
+QUnit.test("Percentage test", function (assert) {
+    clearCurrent();
+    addDigit('42');
+    percentage();
+    percentage();
+    assert.equal(document.getElementById("screen").value, "0.0042", "Passed - Expected 0.0042");
+});
+QUnit.test("Inverse test", function (assert) {
+    clearCurrent();
+    addDigit('5');
+    inverse();
+    assert.equal(document.getElementById("screen").value, "0.2", "Passed - Expected 0.2");
+});
